@@ -6,9 +6,7 @@ import {Text} from './src/components/Text/Text';
 export default function App(): React.JSX.Element {
   return (
     <SafeAreaView>
-      <Text bold italic>
-        Hello World
-      </Text>
+      <Text preset="headingLarge">show! de bola</Text>
     </SafeAreaView>
   );
 }

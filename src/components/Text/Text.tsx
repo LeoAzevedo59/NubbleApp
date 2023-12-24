@@ -65,7 +65,7 @@ function getFontFamily(
     preset === 'headingMedium' ||
     preset === 'headingSmall'
   ) {
-    return italic ? $fontFamily.italic : $fontFamily.bold;
+    return italic ? $fontFamily.boldItalic : $fontFamily.bold;
   }
 
   if (bold && italic) {
