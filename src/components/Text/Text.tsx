@@ -22,7 +22,7 @@ export function Text({
   semiBold = false,
   ...rest
 }: TextProps) {
-  const fontFamily = getFontFamily(bold, italic, semiBold);
+  const fontFamily = getFontFamily(preset, bold, italic, semiBold);
 
   return (
     <RNText style={[$fontSize[preset], style, {fontFamily}]} {...rest}>
@@ -54,7 +54,20 @@ const $fontSize: Record<TextVariants, TextStyle> = {
   paragraphCaptionSmall: {fontSize: 10, lineHeight: 14},
 };
 
-function getFontFamily(bold: boolean, italic: boolean, semiBold: boolean) {
+function getFontFamily(
+  preset: TextVariants,
+  bold: boolean,
+  italic: boolean,
+  semiBold: boolean,
+) {
+  if (
+    preset === 'headingLarge' ||
+    preset === 'headingMedium' ||
+    preset === 'headingSmall'
+  ) {
+    return italic ? $fontFamily.italic : $fontFamily.bold;
+  }
+
   if (bold && italic) {
     return $fontFamily.boldItalic;
   }
