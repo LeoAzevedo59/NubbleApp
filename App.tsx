@@ -6,7 +6,9 @@ import {Text} from './src/components/Text/Text';
 export default function App(): React.JSX.Element {
   return (
     <SafeAreaView>
-      <Text style={{fontFamily: 'Satoshi-BoldItalic'}}>Hello World</Text>
+      <Text bold italic>
+        Hello World
+      </Text>
     </SafeAreaView>
   );
 }
