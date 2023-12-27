@@ -15,7 +15,8 @@ export function Button({title, loading}: ButtonProps) {
         alignItems="center"
         justifyContent="center"
         height={50}
-        backgroundColor="carrotSecondary">
+        backgroundColor="primary"
+        borderRadius="s16">
         {loading ? (
           <ActivityIndicator color={'#fff'} />
         ) : (
