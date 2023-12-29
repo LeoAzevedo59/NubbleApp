@@ -1,11 +1,12 @@
 import React from 'react';
 
-import {SafeAreaView, TextInput, View} from 'react-native';
+import {SafeAreaView, View} from 'react-native';
 import {ThemeProvider} from '@shopify/restyle';
 import {theme} from './src/theme/theme';
 import {Text} from './src/components/Text/Text';
 import {Box} from './src/components/Box/Box';
 import {Button} from './src/components/Button/Button';
+import {TextInput} from './src/components/TextInput/TextInput';
 
 export default function App(): React.JSX.Element {
   return (
@@ -18,25 +19,23 @@ export default function App(): React.JSX.Element {
           <Text marginBottom="s40" preset="paragraphLarge">
             Digite seu e-mail e senha para entrar
           </Text>
-          <Box mb="s20">
-            <TextInput
-              placeholder="Digite seu e-mail"
-              style={{borderWidth: 1, height: 50}}
-            />
+          <Box marginBottom="s20">
+            <TextInput label="E-mail" placeholder="Digite seu e-mail" />
           </Box>
-          <Box mb="s20">
-            <TextInput
-              placeholder="Digite sua senha"
-              style={{borderWidth: 1, height: 50}}
-            />
+          <Box marginBottom="s20">
+            <TextInput label="Senha" placeholder="Digite sua senha" />
           </Box>
 
-          <Text mt="s8" preset="paragraphSmall" bold color="greenPrimary">
+          <Text
+            marginTop="s8"
+            preset="paragraphSmall"
+            bold
+            color="greenPrimary">
             Esqueci minha senha
           </Text>
 
-          <Button mt="s48" title="Entrar" />
-          <Button mt="s12" preset="outline" title="Criar uma conta" />
+          <Button marginTop="s48" title="Entrar" />
+          <Button marginTop="s12" preset="outline" title="Criar uma conta" />
         </View>
       </SafeAreaView>
     </ThemeProvider>
