@@ -13,8 +13,13 @@ export default function App(): React.JSX.Element {
       <SafeAreaView>
         <Box paddingHorizontal="s12">
           <Text preset="headingLarge">Coff Stack</Text>
-          <Button preset="outline" title="Created" marginBottom="s24" />
-          <Button title="Created" />
+          <Button
+            disabled
+            preset="outline"
+            title="Created"
+            marginBottom="s24"
+          />
+          <Button loading title="Created" />
         </Box>
       </SafeAreaView>
     </ThemeProvider>
