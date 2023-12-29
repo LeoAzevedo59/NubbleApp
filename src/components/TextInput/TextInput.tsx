@@ -13,12 +13,14 @@ import {useAppTheme} from '../../hooks/useAppTheme';
 interface TextInputProps extends RNTextInputProps {
   label: string;
   errorMessage?: string;
+  boxProps: BoxProps;
   RightComponent?: React.ReactElement;
 }
 
 export function TextInput({
   label,
   errorMessage,
+  boxProps,
   RightComponent,
   ...rnTextInputProps
 }: TextInputProps) {
@@ -40,8 +42,8 @@ export function TextInput({
   }
 
   return (
-    <Pressable onPress={focusInput}>
-      <Box>
+    <Box {...boxProps}>
+      <Pressable onPress={focusInput}>
         <Text mb="s4">{label}</Text>
         <Box {...$textInputContainer}>
           <RNTextInput
@@ -57,8 +59,8 @@ export function TextInput({
             {errorMessage}
           </Text>
         )}
-      </Box>
-    </Pressable>
+      </Pressable>
+    </Box>
   );
 }
 
