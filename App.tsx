@@ -20,7 +20,11 @@ export default function App(): React.JSX.Element {
             Digite seu e-mail e senha para entrar
           </Text>
           <Box marginBottom="s20">
-            <TextInput label="E-mail" placeholder="Digite seu e-mail" />
+            <TextInput
+              errorMessage="mensagem de erro."
+              label="E-mail"
+              placeholder="Digite seu e-mail"
+            />
           </Box>
           <Box marginBottom="s20">
             <TextInput label="Senha" placeholder="Digite sua senha" />
