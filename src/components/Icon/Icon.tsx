@@ -2,7 +2,7 @@ import React from 'react';
 import {EyeOnIcon} from '../../assets/icons/EyeOnIcon';
 import {EyeOffIcon} from '../../assets/icons/EyeOffIcon';
 import {ThemeColors} from '../../theme/theme';
-import useAppTheme from '../../hooks/useAppTheme';
+import {useAppTheme} from '../../hooks/useAppTheme';
 
 export interface IconBaseProps {
   color?: string;
@@ -18,7 +18,7 @@ interface IconProps extends IconBaseProps {
 export function Icon({
   name,
   color = 'backgroundContrast',
-  size = 24,
+  size = 20,
 }: IconProps) {
   const {colors} = useAppTheme();
   const SVGIcon = iconRegistry[name];
