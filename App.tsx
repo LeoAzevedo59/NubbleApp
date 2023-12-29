@@ -6,6 +6,7 @@ import {Button} from './src/components/Button/Button';
 import {ThemeProvider} from '@shopify/restyle';
 import {theme} from './src/theme/theme';
 import {Box} from './src/components/Box/Box';
+import {Icon} from './src/components/Icon/Icon';
 
 export default function App(): React.JSX.Element {
   return (
@@ -20,6 +21,8 @@ export default function App(): React.JSX.Element {
             marginBottom="s24"
           />
           <Button loading title="Created" />
+          <Icon name="eyeOn" />
+          <Icon name="eyeOn" />
         </Box>
       </SafeAreaView>
     </ThemeProvider>
