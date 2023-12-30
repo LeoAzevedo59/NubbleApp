@@ -3,6 +3,7 @@ import {EyeOnIcon} from '../../assets/icons/EyeOnIcon';
 import {EyeOffIcon} from '../../assets/icons/EyeOffIcon';
 import {ThemeColors} from '../../theme/theme';
 import {useAppTheme} from '../../hooks/useAppTheme';
+import {ArrowLeftIcon} from '../../assets/icons/ArrowLeftIcon';
 
 export interface IconBaseProps {
   color?: string;
@@ -29,6 +30,7 @@ export function Icon({
 const iconRegistry = {
   eyeOn: EyeOnIcon,
   eyeOff: EyeOffIcon,
+  arrowLeft: ArrowLeftIcon,
 };
 
 export type IconType = typeof iconRegistry;

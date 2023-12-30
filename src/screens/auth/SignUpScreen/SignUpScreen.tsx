@@ -8,7 +8,7 @@ export function SignUpScreen() {
   function onSubmit() {}
 
   return (
-    <Screen>
+    <Screen canGoBack scrollable>
       <Text bold preset="headingLarge">
         Criar uma conta
       </Text>
@@ -16,25 +16,31 @@ export function SignUpScreen() {
         placeholder="@"
         label="Seu username"
         boxProps={{marginTop: 's32'}}
-        errorMessage="Digite um username válido"
       />
       <TextInput
         placeholder="Digite seu nome completo"
         label="Nome completo"
         boxProps={{marginTop: 's16'}}
-        errorMessage="Digite um nome válido"
       />
       <TextInput
         placeholder="Digite seu e-mail"
         label="E-mail"
         boxProps={{marginTop: 's16'}}
-        errorMessage="Digite um e-mail válido"
       />
       <TextInput
         placeholder="Digite sua senha"
         label="Senha"
         boxProps={{marginTop: 's16'}}
-        errorMessage="Digite uma senha válida"
+      />
+      <TextInput
+        placeholder="Digite sua senha"
+        label="Senha"
+        boxProps={{marginTop: 's16'}}
+      />
+      <TextInput
+        placeholder="Digite sua senha"
+        label="Senha"
+        boxProps={{marginTop: 's16'}}
       />
       <Button onPress={onSubmit} marginTop="s48" title="Criar minha conta" />
     </Screen>
