@@ -5,13 +5,15 @@ import {ThemeColors} from '../../theme/theme';
 import {useAppTheme} from '../../hooks/useAppTheme';
 import {ArrowLeftIcon} from '../../assets/icons/ArrowLeftIcon';
 import {Pressable} from 'react-native';
+import {CheckRoundIcon} from '../../assets/icons/CheckRoundIcon';
+import {MessageRoundIcon} from '../../assets/icons/MessageRoundIcon';
 
 export interface IconBaseProps {
   color?: string;
   size?: number;
 }
 
-interface IconProps extends IconBaseProps {
+export interface IconProps extends IconBaseProps {
   name: IconsName;
   color?: ThemeColors;
   size?: number;
@@ -42,6 +44,8 @@ const iconRegistry = {
   eyeOn: EyeOnIcon,
   eyeOff: EyeOffIcon,
   arrowLeft: ArrowLeftIcon,
+  checkRound: CheckRoundIcon,
+  messageRound: MessageRoundIcon,
 };
 
 export type IconType = typeof iconRegistry;
