@@ -17,7 +17,7 @@ export function SuccessScreen({route}: ScreenProps) {
       <Text marginTop="s24" preset="headingLarge">
         {route.params.title}
       </Text>
-      <Text marginTop="s16" preset="paragraphSmall">
+      <Text marginTop="s16" preset="paragraphLarge">
         {route.params.description}
       </Text>
       <Button
