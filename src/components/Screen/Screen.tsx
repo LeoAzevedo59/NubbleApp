@@ -25,13 +25,18 @@ export function Screen({
 
   const Container = scrollable ? ScrollViewContainer : ViewContainer;
 
+  function goBack() {
+    console.log('go back');
+    navigation.goBack;
+  }
+
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={{flex: 1}}>
       <Container backgroundColor={colors.background}>
         <TouchableOpacityBox
-          onPress={navigation.goBack}
+          onPress={goBack}
           paddingHorizontal="s24"
           paddingBottom="s20"
           style={{marginTop: top, marginBottom: bottom}}>
