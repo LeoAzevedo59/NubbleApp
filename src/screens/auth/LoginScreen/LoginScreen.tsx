@@ -74,6 +74,10 @@ export function LoginScreen({navigation}: ScreenProps) {
         name="password"
         rules={{
           required: 'Senha obrigatório',
+          minLength: {
+            value: 8,
+            message: 'Senha deve ter no mínimo 8 caracteres',
+          },
         }}
         render={({field, fieldState}) => (
           <TextInput
