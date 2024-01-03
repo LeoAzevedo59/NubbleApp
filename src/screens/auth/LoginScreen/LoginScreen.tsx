@@ -73,7 +73,7 @@ export function LoginScreen({navigation}: ScreenProps) {
         control={control}
         name="password"
         rules={{
-          required: 'Senha obrigatório.',
+          required: 'Senha obrigatório',
         }}
         render={({field, fieldState}) => (
           <TextInput
