@@ -1,14 +1,14 @@
 import React from 'react';
 
-import {Icon} from '../../../components/Icon/Icon';
 import {Text} from '../../../components/Text/Text';
-import {TextInput} from '../../../components/TextInput/TextInput';
 import {Button} from '../../../components/Button/Button';
 import {Screen} from '../../../components/Screen/Screen';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../../routes/Routes';
-import {useForm, Controller} from 'react-hook-form';
+import {useForm} from 'react-hook-form';
 import {Alert} from 'react-native';
+import {FormPasswordInput} from '../../../components/Form/FormPasswordInput';
+import {FormTextInput} from '../../../components/Form/FormTextInput';
 
 type LoginFormType = {
   email: string;
@@ -47,7 +47,7 @@ export function LoginScreen({navigation}: ScreenProps) {
         Digite seu e-mail e senha para entrar
       </Text>
 
-      <Controller
+      <FormTextInput
         control={control}
         name="email"
         rules={{
@@ -57,19 +57,12 @@ export function LoginScreen({navigation}: ScreenProps) {
             message: 'E-mail inválido',
           },
         }}
-        render={({field, fieldState}) => (
-          <TextInput
-            label="E-mail"
-            placeholder="Digite seu e-mail"
-            value={field.value}
-            onChangeText={field.onChange}
-            errorMessage={fieldState.error?.message}
-            boxProps={{mb: 's20'}}
-          />
-        )}
+        label="E-mail"
+        placeholder="Digite seu e-mail"
+        boxProps={{marginTop: 's16'}}
       />
 
-      <Controller
+      <FormPasswordInput
         control={control}
         name="password"
         rules={{
@@ -79,17 +72,9 @@ export function LoginScreen({navigation}: ScreenProps) {
             message: 'Senha deve ter no mínimo 8 caracteres',
           },
         }}
-        render={({field, fieldState}) => (
-          <TextInput
-            label="Senha"
-            placeholder="Digite sua senha"
-            value={field.value}
-            onChangeText={field.onChange}
-            errorMessage={fieldState.error?.message}
-            RightComponent={<Icon name="eyeOn" color="gray2" />}
-            boxProps={{mb: 's8'}}
-          />
-        )}
+        placeholder="Digite sua senha"
+        label="Senha"
+        boxProps={{marginTop: 's16'}}
       />
 
       <Text
