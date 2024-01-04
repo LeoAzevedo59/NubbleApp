@@ -35,19 +35,22 @@ export function Screen({
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={{flex: 1}}>
       <Container backgroundColor={colors.background}>
-        <TouchableOpacityBox
-          onPress={goBack}
+        <Box
           paddingHorizontal="s24"
           paddingBottom="s20"
           style={{marginTop: top, marginBottom: bottom}}>
           {canGoBack && (
-            <Box mb="s24" flexDirection="row" alignItems="center">
+            <TouchableOpacityBox
+              onPress={goBack}
+              mb="s24"
+              flexDirection="row"
+              alignItems="center">
               <Icon name="arrowLeft" color="primary" />
               <Text ml="s8">Voltar</Text>
-            </Box>
+            </TouchableOpacityBox>
           )}
           {children}
-        </TouchableOpacityBox>
+        </Box>
       </Container>
     </KeyboardAvoidingView>
   );

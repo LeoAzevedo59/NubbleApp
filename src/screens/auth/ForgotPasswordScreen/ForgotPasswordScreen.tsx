@@ -16,6 +16,8 @@ export function ForgotPasswordScreen({}: ScreenProps) {
   const {reset} = useReactNavigationSuccess();
 
   function submitForm() {
+    console.log('submit');
+
     reset({
       title: 'Enviamos as instruções para seu e-mail',
       description:
