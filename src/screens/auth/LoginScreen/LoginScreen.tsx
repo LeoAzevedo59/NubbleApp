@@ -9,11 +9,8 @@ import {useForm} from 'react-hook-form';
 import {Alert} from 'react-native';
 import {FormPasswordInput} from '../../../components/Form/FormPasswordInput';
 import {FormTextInput} from '../../../components/Form/FormTextInput';
-
-type LoginFormType = {
-  email: string;
-  password: string;
-};
+import {loginValidation, LoginValidationType} from './loginValidation';
+import {zodResolver} from '@hookform/resolvers/zod';
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'LoginScreen'>;
 
@@ -26,7 +23,8 @@ export function LoginScreen({navigation}: ScreenProps) {
     navigation.navigate('ForgotPasswordScreen');
   }
 
-  const {control, formState, handleSubmit} = useForm<LoginFormType>({
+  const {control, formState, handleSubmit} = useForm<LoginValidationType>({
+    resolver: zodResolver(loginValidation),
     defaultValues: {
       email: '',
       password: '',
@@ -34,7 +32,7 @@ export function LoginScreen({navigation}: ScreenProps) {
     mode: 'onChange',
   });
 
-  function submitForm({email, password}: LoginFormType) {
+  function submitForm({email, password}: LoginValidationType) {
     Alert.alert(email, password);
   }
 
@@ -50,13 +48,6 @@ export function LoginScreen({navigation}: ScreenProps) {
       <FormTextInput
         control={control}
         name="email"
-        rules={{
-          required: 'E-mail obrigatório.',
-          pattern: {
-            value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
-            message: 'E-mail inválido',
-          },
-        }}
         label="E-mail"
         placeholder="Digite seu e-mail"
         boxProps={{marginTop: 's16'}}
@@ -65,13 +56,6 @@ export function LoginScreen({navigation}: ScreenProps) {
       <FormPasswordInput
         control={control}
         name="password"
-        rules={{
-          required: 'Senha obrigatório',
-          minLength: {
-            value: 8,
-            message: 'Senha deve ter no mínimo 8 caracteres',
-          },
-        }}
         placeholder="Digite sua senha"
         label="Senha"
         boxProps={{marginTop: 's16'}}
