@@ -1,4 +1,9 @@
 import React from 'react';
+import {Alert} from 'react-native';
+
+import {zodResolver} from '@hookform/resolvers/zod';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {useForm} from 'react-hook-form';
 
 import {
   Text,
@@ -8,11 +13,8 @@ import {
   FormTextInput,
 } from '@components';
 import {RootStackParamList} from '@routes';
+
 import {loginValidation, LoginValidationType} from './loginValidation';
-import {useForm} from 'react-hook-form';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {Alert} from 'react-native';
-import {zodResolver} from '@hookform/resolvers/zod';
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'LoginScreen'>;
 

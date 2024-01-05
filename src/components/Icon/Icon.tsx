@@ -1,7 +1,5 @@
 import React from 'react';
-
-import {ThemeColors} from '@theme';
-import {useAppTheme} from '@hooks';
+import {Pressable} from 'react-native';
 
 import {
   ArrowLeftIcon,
@@ -11,7 +9,8 @@ import {
   EyeOnIcon,
 } from '@assets';
 
-import {Pressable} from 'react-native';
+import {useAppTheme} from '@hooks';
+import {ThemeColors} from '@theme';
 
 export interface IconBaseProps {
   color?: string;

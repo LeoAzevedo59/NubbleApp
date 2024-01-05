@@ -1,11 +1,11 @@
 import React from 'react';
+import {KeyboardAvoidingView, Platform} from 'react-native';
+
+import {useNavigation} from '@react-navigation/native';
 
 import {Box, TouchableOpacityBox, Icon, Text} from '@components';
-
 import {useAppSafeArea, useAppTheme} from '@hooks';
 
-import {KeyboardAvoidingView, Platform} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
 import {ScrollViewContainer, ViewContainer} from './components/ScreenContainer';
 
 interface ScreenProps {
@@ -33,7 +33,7 @@ export function Screen({
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={{flex: 1}}>
+      style={$style}>
       <Container backgroundColor={colors.background}>
         <Box
           paddingHorizontal="s24"
@@ -55,3 +55,7 @@ export function Screen({
     </KeyboardAvoidingView>
   );
 }
+
+const $style = {
+  flex: 1,
+};

@@ -1,7 +1,9 @@
 import React from 'react';
 
-import {RootStackParamList} from '@routes';
-import {useReactNavigationSuccess} from '@hooks';
+import {zodResolver} from '@hookform/resolvers/zod';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {useForm} from 'react-hook-form';
+
 import {
   Screen,
   Text,
@@ -9,11 +11,10 @@ import {
   FormTextInput,
   FormPasswordInput,
 } from '@components';
+import {useReactNavigationSuccess} from '@hooks';
+import {RootStackParamList} from '@routes';
 
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {useForm} from 'react-hook-form';
 import {signUpValidation, SignUpValidationType} from './signUpValidation';
-import {zodResolver} from '@hookform/resolvers/zod';
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'SignUpScreen'>;
 

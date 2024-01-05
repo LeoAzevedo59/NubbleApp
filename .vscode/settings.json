@@ -1,5 +1,8 @@
 {
     "cSpell.words": [
         "shopify"
-    ]
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.esLint": true
+    }
 }
