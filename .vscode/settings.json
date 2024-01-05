@@ -3,6 +3,6 @@
         "shopify"
     ],
     "editor.codeActionsOnSave": {
-        "source.fixAll.esLint": true
+        "source.fixAll.esLint": "explicit"
     }
 }
