@@ -12,11 +12,11 @@ import {
   FormPasswordInput,
   FormTextInput,
 } from '@components';
-import {RootStackParamList} from '@routes';
+import {AuthStackParamList} from '@routes';
 
 import {loginValidation, LoginValidationType} from './loginValidation';
 
-type ScreenProps = NativeStackScreenProps<RootStackParamList, 'LoginScreen'>;
+type ScreenProps = NativeStackScreenProps<AuthStackParamList, 'LoginScreen'>;
 
 export function LoginScreen({navigation}: ScreenProps) {
   function navigateToSignUpScreen() {

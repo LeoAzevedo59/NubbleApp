@@ -12,11 +12,11 @@ import {
   FormPasswordInput,
 } from '@components';
 import {useReactNavigationSuccess} from '@hooks';
-import {RootStackParamList} from '@routes';
+import {AuthStackParamList} from '@routes';
 
 import {signUpValidation, SignUpValidationType} from './signUpValidation';
 
-type ScreenProps = NativeStackScreenProps<RootStackParamList, 'SignUpScreen'>;
+type ScreenProps = NativeStackScreenProps<AuthStackParamList, 'SignUpScreen'>;
 
 export function SignUpScreen({}: ScreenProps) {
   const {reset} = useReactNavigationSuccess();

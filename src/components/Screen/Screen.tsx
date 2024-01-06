@@ -26,8 +26,7 @@ export function Screen({
   const Container = scrollable ? ScrollViewContainer : ViewContainer;
 
   function goBack() {
-    console.log('go back');
-    navigation.goBack;
+    navigation.goBack();
   }
 
   return (

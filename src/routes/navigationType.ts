@@ -1,7 +1,7 @@
-import {RootStackParamList} from './Routes';
+import {AuthStackParamList} from './index';
 
 declare global {
   namespace ReactNavigation {
-    interface RootParamList extends RootStackParamList {}
+    interface RootParamList extends AuthStackParamList {}
   }
 }

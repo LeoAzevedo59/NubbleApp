@@ -6,12 +6,12 @@ import {useForm} from 'react-hook-form';
 
 import {Screen, Button, Text, FormTextInput} from '@components';
 import {useReactNavigationSuccess} from '@hooks';
-import {RootStackParamList} from '@routes';
+import {AuthStackParamList} from '@routes';
 
 import {ForgotPasswordType, forgotPassword} from './forgotPasswordValidation';
 
 type ScreenProps = NativeStackScreenProps<
-  RootStackParamList,
+  AuthStackParamList,
   'ForgotPasswordScreen'
 >;
 
