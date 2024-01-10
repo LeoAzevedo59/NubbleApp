@@ -2,7 +2,15 @@ import React from 'react';
 
 import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 
-import {Box, Icon, Text, TouchableOpacityBox} from '@components';
+import {
+  Box,
+  BoxProps,
+  Icon,
+  Text,
+  TextProps,
+  TouchableOpacityBox,
+  TouchableOpacityBoxProps,
+} from '@components';
 import {useAppSafeArea} from '@hooks';
 import {$shadowProps} from '@theme';
 
@@ -13,11 +21,7 @@ export function AppTabBar({state, descriptors, navigation}: BottomTabBarProps) {
   const {bottom} = useAppSafeArea();
 
   return (
-    <Box
-      flexDirection="row"
-      backgroundColor="background"
-      paddingTop="s12"
-      style={[{paddingBottom: bottom}, $shadowProps]}>
+    <Box {...$boxWrapper} style={[{paddingBottom: bottom}, $shadowProps]}>
       {state.routes.map((route, index) => {
         const {options} = descriptors[route.key];
 
@@ -47,11 +51,7 @@ export function AppTabBar({state, descriptors, navigation}: BottomTabBarProps) {
 
         return (
           <TouchableOpacityBox
-            activeOpacity={1}
-            // backgroundColor="primaryContrast"
-
-            alignItems="center"
-            accessibilityRole="button"
+            {...$itemWrapper}
             accessibilityState={isFocused ? {selected: true} : {}}
             accessibilityLabel={options.tabBarAccessibilityLabel}
             testID={options.tabBarTestID}
@@ -62,12 +62,28 @@ export function AppTabBar({state, descriptors, navigation}: BottomTabBarProps) {
               color={isFocused ? 'primary' : 'backgroundContrast'}
               name={isFocused ? tabItem.icon.focused : tabItem.icon.unfocused}
             />
-            <Text paddingTop="s4" semiBold preset="paragraphCaption">
-              {tabItem.label}
-            </Text>
+            <Text {...$label}>{tabItem.label}</Text>
           </TouchableOpacityBox>
         );
       })}
     </Box>
   );
 }
+
+const $label: TextProps = {
+  semiBold: true,
+  marginTop: 's4',
+  preset: 'paragraphCaption',
+};
+
+const $itemWrapper: TouchableOpacityBoxProps = {
+  activeOpacity: 1,
+  alignItems: 'center',
+  accessibilityRole: 'button',
+};
+
+const $boxWrapper: BoxProps = {
+  flexDirection: 'row',
+  backgroundColor: 'background',
+  paddingTop: 's12',
+};
