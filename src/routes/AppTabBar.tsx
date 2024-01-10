@@ -3,13 +3,21 @@ import React from 'react';
 import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 
 import {Box, Icon, Text, TouchableOpacityBox} from '@components';
+import {useAppSafeArea} from '@hooks';
+import {$shadowProps} from '@theme';
 
 import {AppTabNavigatorParamList} from './AppTabNavigator';
 import {mapScreenToProps} from './mapScreenToProps';
 
 export function AppTabBar({state, descriptors, navigation}: BottomTabBarProps) {
+  const {bottom} = useAppSafeArea();
+
   return (
-    <Box flexDirection="row">
+    <Box
+      flexDirection="row"
+      backgroundColor="background"
+      paddingTop="s12"
+      style={[{paddingBottom: bottom}, $shadowProps]}>
       {state.routes.map((route, index) => {
         const {options} = descriptors[route.key];
 
@@ -40,8 +48,8 @@ export function AppTabBar({state, descriptors, navigation}: BottomTabBarProps) {
         return (
           <TouchableOpacityBox
             activeOpacity={1}
-            backgroundColor="primaryContrast"
-            paddingVertical="s12"
+            // backgroundColor="primaryContrast"
+
             alignItems="center"
             accessibilityRole="button"
             accessibilityState={isFocused ? {selected: true} : {}}
@@ -54,7 +62,7 @@ export function AppTabBar({state, descriptors, navigation}: BottomTabBarProps) {
               color={isFocused ? 'primary' : 'backgroundContrast'}
               name={isFocused ? tabItem.icon.focused : tabItem.icon.unfocused}
             />
-            <Text semiBold preset="paragraphCaption">
+            <Text paddingTop="s4" semiBold preset="paragraphCaption">
               {tabItem.label}
             </Text>
           </TouchableOpacityBox>
