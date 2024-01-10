@@ -7,6 +7,15 @@ import {
   CheckRoundIcon,
   EyeOffIcon,
   EyeOnIcon,
+  BookMarkFillIcon,
+  BookMarkIcon,
+  HeartFillIcon,
+  HeartIcon,
+  HomeFillIcon,
+  HomeIcon,
+  NewPostIcon,
+  ProfileFillIcon,
+  ProfileIcon,
 } from '@assets';
 
 import {useAppTheme} from '@hooks';
@@ -50,6 +59,15 @@ const iconRegistry = {
   arrowLeft: ArrowLeftIcon,
   checkRound: CheckRoundIcon,
   messageRound: MessageRoundIcon,
+  bookMarkFill: BookMarkFillIcon,
+  bookMark: BookMarkIcon,
+  heartFillIcon: HeartFillIcon,
+  heartIcon: HeartIcon,
+  homeFillIcon: HomeFillIcon,
+  homeIcon: HomeIcon,
+  newPostIcon: NewPostIcon,
+  profileFillIcon: ProfileFillIcon,
+  profileIcon: ProfileIcon,
 };
 
 export type IconType = typeof iconRegistry;

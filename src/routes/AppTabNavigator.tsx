@@ -2,6 +2,7 @@ import React from 'react';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
+import {Text} from '@components';
 import {
   FavoriteScreen,
   HomeScreen,
@@ -24,7 +25,21 @@ export function AppTabNavigator() {
       screenOptions={{
         headerShown: false,
       }}>
-      <Tab.Screen name="HomeScreen" component={HomeScreen} />
+      <Tab.Screen
+        options={{
+          tabBarLabel: ({focused}) => (
+            <Text
+              preset="paragraphCaption"
+              semiBold
+              color={focused ? 'primary' : 'backgroundContrast'}>
+              Início
+            </Text>
+          ),
+          // tabBarIcon: () =>
+        }}
+        name="HomeScreen"
+        component={HomeScreen}
+      />
       <Tab.Screen name="NewPostScreen" component={NewPostScreen} />
       <Tab.Screen name="FavoriteScreen" component={FavoriteScreen} />
       <Tab.Screen name="MyProfileScreen" component={MyProfileScreen} />
