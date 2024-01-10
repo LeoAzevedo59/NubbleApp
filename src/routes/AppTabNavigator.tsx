@@ -2,7 +2,7 @@ import React from 'react';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import {Text} from '@components';
+import {Icon, Text} from '@components';
 import {
   FavoriteScreen,
   HomeScreen,
@@ -35,7 +35,12 @@ export function AppTabNavigator() {
               Início
             </Text>
           ),
-          // tabBarIcon: () =>
+          tabBarIcon: ({focused}) => (
+            <Icon
+              color="primary"
+              name={focused ? 'homeFillIcon' : 'homeIcon'}
+            />
+          ),
         }}
         name="HomeScreen"
         component={HomeScreen}
