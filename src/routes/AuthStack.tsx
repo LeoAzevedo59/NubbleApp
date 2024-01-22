@@ -30,10 +30,11 @@ export function AuthStack() {
         fullScreenGestureEnabled: true,
       }}
       initialRouteName="LoginScreen">
-      <Stack.Screen name="LoginScreen" component={LoginScreen} />
-      <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
-      <Stack.Screen name="SuccessScreen" component={SuccessScreen} />
+      <Stack.Screen key={0} name="LoginScreen" component={LoginScreen} />
+      <Stack.Screen key={1} name="SignUpScreen" component={SignUpScreen} />
+      <Stack.Screen key={2} name="SuccessScreen" component={SuccessScreen} />
       <Stack.Screen
+        key={3}
         name="ForgotPasswordScreen"
         component={ForgotPasswordScreen}
       />

@@ -1,6 +1,9 @@
 import React from 'react';
 import {Pressable} from 'react-native';
 
+import {useAppTheme} from '@hooks';
+import {ThemeColors} from '@theme';
+
 import {
   ArrowLeftIcon,
   MessageRoundIcon,
@@ -16,10 +19,7 @@ import {
   NewPostIcon,
   ProfileFillIcon,
   ProfileIcon,
-} from '@assets';
-
-import {useAppTheme} from '@hooks';
-import {ThemeColors} from '@theme';
+} from '../../assets/icons';
 
 export interface IconBaseProps {
   color?: string;

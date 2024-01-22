@@ -22,8 +22,12 @@ export function AppStack() {
         fullScreenGestureEnabled: true,
       }}
       initialRouteName="AppTabNavigator">
-      <Stack.Screen name="AppTabNavigator" component={AppTabNavigator} />
-      <Stack.Screen name="SettingsScreen" component={SettingsScreen} />
+      <Stack.Screen
+        key={4}
+        name="AppTabNavigator"
+        component={AppTabNavigator}
+      />
+      <Stack.Screen key={5} name="SettingsScreen" component={SettingsScreen} />
     </Stack.Navigator>
   );
 }

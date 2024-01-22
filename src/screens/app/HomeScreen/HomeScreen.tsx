@@ -6,6 +6,8 @@ import {Post, postService} from '@domain';
 import {PostItem, Screen} from '@components';
 import {AppTabScreenProps} from '@routes';
 
+import {HomeHeader} from './components/HomeHeader';
+
 export function HomeScreen({}: AppTabScreenProps<'HomeScreen'>) {
   const [posts, setPosts] = useState<Post[]>([]);
 
@@ -24,6 +26,7 @@ export function HomeScreen({}: AppTabScreenProps<'HomeScreen'>) {
         data={posts}
         keyExtractor={post => post.id}
         renderItem={renderItem}
+        ListHeaderComponent={<HomeHeader />}
       />
     </Screen>
   );
